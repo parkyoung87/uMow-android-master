@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match"
+    android:padding="16dp"
+    android:background="#6fc435">
+
+    <LinearLayout
+        style="@style/block"
+        android:orientation="vertical"
+        android:layout_above="@+id/activity_login_button_login"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            style="@style/block"
+            android:layout_margin="8dp"
+            android:hint="Username"
+            android:id="@+id/Activity_firstpage_username"
+            android:textColor="@color/white" />
+
+        <EditText
+            style="@style/block"
+            android:layout_margin="8dp"
+            android:hint="Password"
+            android:id="@+id/activity_firstpage_password"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:password="true" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/activity_login_button_forgotpassword"
+        style="@style/wrap"
+        android:text="Forgot Password"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/activity_login_button_createaccount"
+        style="@style/wrap"
+        android:text="Create Account"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/activity_login_button_john"
+        style="@style/block"
+        android:text="Johnny Tran"
+        android:textColor="@color/white"
+        android:layout_above="@+id/activity_login_button_forgotpassword" />
+
+    <Button
+        android:id="@+id/activity_login_button_login"
+        style="@style/block"
+        android:text="Login"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_above="@+id/activity_login_button_john" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/umow" />
+
+</RelativeLayout>

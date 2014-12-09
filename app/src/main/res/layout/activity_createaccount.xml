@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/activty_createaccount_et_email"
+        style="@style/block"
+        android:layout_margin="8dp"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/activty_createaccount_et_password"
+        style="@style/block"
+        android:layout_margin="8dp"
+        android:hint="Password"
+        android:password="true"/>
+
+    <EditText
+        android:id="@+id/activty_createaccount_et_passwordconfirm"
+        style="@style/block"
+        android:layout_margin="8dp"
+        android:hint="Confirm Password"
+        android:password="true"/>
+
+    <Button
+        android:id="@+id/activty_createaccount_button_createaccount"
+        style="@style/block"
+        android:layout_margin="8dp"
+        android:text="Create Account"/>
+
+</LinearLayout>

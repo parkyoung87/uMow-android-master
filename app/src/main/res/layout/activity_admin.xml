@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/match"
+    android:padding="8dp" >
+
+    <TextView
+        style="@style/text_body"
+        android:padding="8dp"
+        android:text="Admin Activity" />
+
+    <Button
+        android:id="@+id/activity_admin_button_getusers"
+        style="@style/wrap"
+        android:padding="8dp"
+        android:text="Get Users" />
+
+    <TextView
+        android:id="@+id/activity_admin_textview_log"
+        style="@style/text_body"
+        android:padding="8dp"
+        android:text="Log" />
+
+    <ListView
+        android:id="@+id/activity_admin_listview_users"
+        style="@style/match" />
+
+</LinearLayout>

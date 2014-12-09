@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/match"
+    android:padding="8dp" >
+
+    <TextView
+        style="@style/text_body"
+        android:padding="8dp"
+        android:text="Landscaper Activity" />
+
+    <TextView
+        android:id="@+id/activity_landscaper_display"
+        style="@style/text_body"
+        android:padding="8dp" />
+
+</LinearLayout>
