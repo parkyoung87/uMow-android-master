@@ -43,10 +43,10 @@ public class ActivityPayment extends Activity {
      * - Set to PayPalConfiguration.ENVIRONMENT_NO_NETWORK to kick the tires
      * without communicating to PayPal's servers.
      */
-    private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_NO_NETWORK;
+    private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_SANDBOX;
 
     // note that these credentials will differ between live & sandbox environments.
-    private static final String CONFIG_CLIENT_ID = "credential from developer.paypal.com";
+    private static final String CONFIG_CLIENT_ID = "AebJuRAR0HcDDHuQ4upw9ZJd09y8sFEhad3Yfd6HMoz9LRj41GKptMvLBdQ5";
 
     private static final int REQUEST_CODE_PAYMENT = 1;
     private static final int REQUEST_CODE_FUTURE_PAYMENT = 2;
@@ -94,7 +94,7 @@ public class ActivityPayment extends Activity {
     }
 
     private PayPalPayment getThingToBuy(String paymentIntent) {
-        return new PayPalPayment(new BigDecimal("1.75"), "USD", "hipster jeans",
+        return new PayPalPayment(new BigDecimal("25"), "USD", "Lawn Mowing",
                 paymentIntent);
     }
 
@@ -143,17 +143,17 @@ public class ActivityPayment extends Activity {
         paypalPayment.enablePayPalShippingAddressesRetrieval(enable);
     }
 
-    public void onFuturePaymentPressed(View pressed) {
+   /* public void onFuturePaymentPressed(View pressed) {
         Intent intent = new Intent(ActivityPayment.this, PayPalFuturePaymentActivity.class);
 
         startActivityForResult(intent, REQUEST_CODE_FUTURE_PAYMENT);
-    }
-
+    }*/
+    /*
     public void onProfileSharingPressed(View pressed) {
         Intent intent = new Intent(ActivityPayment.this, PayPalProfileSharingActivity.class);
         intent.putExtra(PayPalProfileSharingActivity.EXTRA_REQUESTED_SCOPES, getOauthScopes());
         startActivityForResult(intent, REQUEST_CODE_PROFILE_SHARING);
-    }
+    }*/
 
     private PayPalOAuthScopes getOauthScopes() {
         /* create the set of required scopes

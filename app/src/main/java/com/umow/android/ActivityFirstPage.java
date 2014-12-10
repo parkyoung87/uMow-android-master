@@ -27,7 +27,7 @@ public class ActivityFirstPage extends Activity_Base {
 
 
 
-        {
+        /*{
             Button buttonJohn = (Button) findViewById(R.id.activity_login_button_john);
             View.OnClickListener onClickListener = new View.OnClickListener() {
                 @Override
@@ -37,7 +37,7 @@ public class ActivityFirstPage extends Activity_Base {
                 }
             };
             buttonJohn.setOnClickListener(onClickListener);
-        }
+        }*/
 
 
 

@@ -26,9 +26,11 @@ public class ActivitySearch extends Activity_Base {
         return R.layout.activity_search;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         SearchView searchView = (SearchView) findViewById(R.id.activity_search_searchview);
 

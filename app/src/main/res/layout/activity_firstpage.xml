@@ -46,19 +46,12 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/activity_login_button_john"
-        style="@style/block"
-        android:text="Johnny Tran"
-        android:textColor="@color/white"
-        android:layout_above="@+id/activity_login_button_forgotpassword" />
-
-    <Button
         android:id="@+id/activity_login_button_login"
         style="@style/block"
         android:text="Login"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:layout_above="@+id/activity_login_button_john" />
+        android:layout_above="@+id/activity_login_button_forgotpassword" />
 
     <ImageView
         android:layout_width="wrap_content"
