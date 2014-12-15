@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    style="@style/match"
-    android:padding="8dp" >
+    android:id="@+id/activity_landscaper_drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6fc435">
 
-    <TextView
-        style="@style/text_body"
-        android:padding="8dp"
-        android:text="Landscaper Activity" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        style="@style/match"
+        android:padding="8dp" >
 
-    <TextView
-        android:id="@+id/activity_landscaper_display"
-        style="@style/text_body"
-        android:padding="8dp" />
+        <TextView
+            style="@style/text_body"
+            android:padding="8dp"
+            android:text="Landscaper Activity" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/activity_landscaper_display"
+            style="@style/text_body"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- The navigation drawer -->
+    <ListView
+        android:id="@+id/activity_landscaper_navigationDrawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#6fc435" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -19,27 +19,25 @@ import java.util.List;
  */
 public class ActivitySandbox extends Activity_Base {
 
-    List<String> planets;
-
+    List<String> drawer_items;
     DrawerLayout drawerLayout;
     ListView lvNavigationDrawer;
-
     ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        planets = new ArrayList<String>();
-        planets.add("Search Activity");
-        planets.add("Landscaper Activity");
-        planets.add("Payment Activity");
-        planets.add("Admin Activity");
+        drawer_items = new ArrayList<String>();
+        drawer_items.add("Search Activity");
+        drawer_items.add("Landscaper Activity");
+        drawer_items.add("Payment Activity");
+        drawer_items.add("Admin Activity");
 
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_sandbox_drawerLayout);
         lvNavigationDrawer = (ListView) findViewById(R.id.activity_sandbox_navigationDrawer);
 
-        lvNavigationDrawer.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, planets));
+        lvNavigationDrawer.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawer_items));
         lvNavigationDrawer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
