@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    style="@style/match" >
+    style="@style/match"
+    android:weightSum="1">
     
     <SearchView
         android:id="@+id/activity_search_searchview"
@@ -14,6 +15,15 @@
     <ListView
         android:id="@+id/activity_search_listview_landscapers"
         style="@style/match"
-        android:background="#6fc435" />
+        android:background="#6fc435"
+        android:layout_height="46dp"
+        android:layout_weight="0.45" />
+
+    <fragment
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:layout_weight="0.36" />
 
 </LinearLayout>

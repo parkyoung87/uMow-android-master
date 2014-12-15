@@ -16,13 +16,36 @@
         android:background="#6fc435"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Lawn Mowing &amp; Edging"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.17"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_marginTop="150dp"
+            android:layout_weight="0.16"
+            android:hint="month/date/year"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/buyItBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="150dp"
             android:onClick="onBuyPressed"
             android:text="Request to Mow"
             android:textColor="@color/white" />

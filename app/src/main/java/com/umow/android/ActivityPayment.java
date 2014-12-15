@@ -56,7 +56,7 @@ public class ActivityPayment extends Activity {
             .environment(CONFIG_ENVIRONMENT)
             .clientId(CONFIG_CLIENT_ID)
                     // The following are only used in PayPalFuturePaymentActivity.
-            .merchantName("Hipster Store")
+            .merchantName("uMow")
             .merchantPrivacyPolicyUri(Uri.parse("https://www.example.com/privacy"))
             .merchantUserAgreementUri(Uri.parse("https://www.example.com/legal"));
 
