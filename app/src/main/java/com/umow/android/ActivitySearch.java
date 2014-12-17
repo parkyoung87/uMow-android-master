@@ -20,6 +20,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseRelation;
+import com.parse.ParseRole;
 import com.parse.ParseUser;
 import com.umow.android.util.UtilToast;
 import com.google.android.gms.maps.model.LatLng;
@@ -146,7 +148,65 @@ public class ActivitySearch extends Activity_Base {
                 progressDialog.setMessage("Retrieving Users...");
                 progressDialog.show();
 
-                ParseQuery<ParseUser> query = ParseUser.getQuery();
+                ParseQuery<ParseRole> query2 = ParseRole.getQuery();
+                query2.findInBackground(new FindCallback<ParseRole>() {
+                    @Override
+                    public void done(List<ParseRole> parseRoles, ParseException e) {
+                        if (e == null) {
+                            // query successful
+                            final ListView listView = (ListView) findViewById(R.id.activity_search_listview_landscapers);
+                            String[] roles = new String[parseRoles.size()];
+
+                            ParseRole landscapers = parseRoles.get(0);
+                            ParseRelation relation = landscapers.getUsers();
+
+                            ParseQuery<ParseUser> query = relation.getQuery();
+                            query.findInBackground(new FindCallback<ParseUser>() {
+                                public void done(List<ParseUser> users, ParseException e) {
+                                    progressDialog.dismiss();
+
+                                    if (e == null) {
+                                        // The query was successful.
+
+                                        final ListView listView = (ListView) findViewById(R.id.activity_search_listview_landscapers);
+
+                                        String[] values = new String[users.size()];
+
+                                        int i=0;
+                                        for(ParseUser user : users) {
+                                            values[i] = user.getUsername();
+                                            i++;
+                                        }
+
+                                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ActivitySearch.this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
+                                        listView.setAdapter(adapter);
+
+                                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                                            @Override
+                                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                // ListView Clicked item index
+                                                int itemPosition     = position;
+
+                                                // ListView Clicked item value
+                                                String  itemValue    = (String) listView.getItemAtPosition(position);
+
+                                                // Show Alert
+                                                UtilToast.showToast(ActivitySearch.this, "Position :" + itemPosition + "  ListItem : " + itemValue);
+                                            }
+                                        });
+
+                                    } else {
+                                        // Something went wrong.
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+
+/*
+                ParseQuery<ParseUser> query = relation.getQuery();
                 query.findInBackground(new FindCallback<ParseUser>() {
                     public void done(List<ParseUser> users, ParseException e) {
                         progressDialog.dismiss();
@@ -187,6 +247,7 @@ public class ActivitySearch extends Activity_Base {
                         }
                     }
                 });
+                */
 
 
                 return true;
