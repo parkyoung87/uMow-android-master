@@ -185,6 +185,7 @@ public class ActivitySearch extends Activity_Base {
 
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                /*
                                                 // ListView Clicked item index
                                                 int itemPosition     = position;
 
@@ -193,6 +194,12 @@ public class ActivitySearch extends Activity_Base {
 
                                                 // Show Alert
                                                 UtilToast.showToast(ActivitySearch.this, "Position :" + itemPosition + "  ListItem : " + itemValue);
+                                                */
+
+                                                // Start an intent
+                                                Intent intent = new Intent(ActivitySearch.this, ActivityLandscaper.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                startActivity(intent);
                                             }
                                         });
 
